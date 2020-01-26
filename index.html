@@ -1,29 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!-- ===CSS LINKS=== -->
     <!-- reset -->
+    <link rel="stylesheet" href="assets/css/reset.css">
     <!-- bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <!-- main -->
+    <link rel="stylesheet" href="assets/css/main.css">
     <!-- ===FONTS=== -->
     <!-- ===JS LINKS=== -->
+    <!-- jquery -->
+    <script defer src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
     <!-- bootstrap -->
+    <script defer src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <script defer src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+    </script>
     <!-- moment -->
+    <script src="assets/javascript/moment.js"></script>
     <!-- app -->
+    <script src="assets/javascript/app.js"></script>
     <title>Train Scheduler</title>
 </head>
+
 <body>
-    <header>
+    <div class="container">
+        <header>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div id="heading-container">
+                        <h1 class="display-4" id="page-heading">Train Scheduler</h1>
+                        <hr id="heading-divider">
+                        <p id="tagline">Simple, Effective Rail Transit Tracking</p>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <main>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div id="train-schedule-container">
+                        <div class="card">
+                            <h5 class="card-header">Train Schedule</h5>
+                            <img src="#" alt="train Schedule image" class="card-img-top">
+                            <div class="card-body">
+                                <table id="train-schedule-table">
+                                    <tr>
+                                        <th>Train Name</th>
+                                        <th>Destination</th>
+                                        <th>Frequency (min)</th>
+                                        <th>Next Arrival</th>
+                                        <th>Minutes Away</th>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <br>
+                    <br>
+                    <div id="admin-panel-container">
+                        <div class="card">
+                            <h5 class="card-header">Admin Panel</h5>
+                            <img src="#" alt="admin panel image" class="card-img-top">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="card">
+                                            <h5 class="card-header">Controls</h5>
+                                            <div class="card-body">
+                                                <button type="button" id="add-entry-btn" class="btn btn-block btn-success">Add
+                                                    Entry</button>
+                                                <br>
+                                                <button type="button" id="update-entry-btn"
+                                                    class="btn btn-block btn-primary">Update
+                                                    Entry</button>
+                                                <br>
+                                                <button type="button" id="remove-entry-btn"
+                                                    class="btn btn-block btn-danger">Remove
+                                                    Entry</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <form action="#" id="add-train-form">
+                                            <div class="form-group">
+                                                <label for="train-name">Train Name:</label>
+                                                <input type="text" class="form-control" id="train-name"
+                                                    aria-describedby="name-help" required>
+                                                <small id="name-help" class="form-text text-muted">Please enter a name
+                                                    or other valid designation.</small>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="train-name">Destination:</label>
+                                                <input type="text" class="form-control" id="train-destination"
+                                                    aria-describedby="destination-help" placeholder="San Francisco" required>
+                                                <small id="destination-help" class="form-text text-muted">Please enter a valid destination.</small>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="train-time">First Train Time (HH:mm-Military Time):</label>
+                                                <input type="text" class="form-control" id="train-time"
+                                                    aria-describedby="time-help" placeholder="18:00" required>
+                                                <small id="time-help" class="form-text text-muted">Please enter a valid arrival time.</small>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="train-frequency">Train Frequency (min):</label>
+                                                <input type="text" class="form-control" id="train-frequency"
+                                                    aria-describedby="frequency-help" required>
+                                                <small id="frequency-help" class="form-text text-muted">Please enter a value in minutes.</small>
+                                            </div>
+                                            <button type="submit" class="btn btn-success" id="add-train-btn">Add Train</button>
+                                            <button type="reset" class="btn btn-danger">Reset Form</button>
+                                            <br>
+                                            <br>
+                                            <button type="button" class="btn btn-block btn-warning">Finished</button>
+                                        </form>
 
-    </header>
-    <main>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer>
 
-    </main>
-    <footer>
-
-    </footer>
+        </footer>
+    </div>
 </body>
+
 </html>
