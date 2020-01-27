@@ -41,7 +41,8 @@
                         <h1 class="display-4" id="page-heading">Train Scheduler</h1>
                         <p id="tagline">Simple, Effective Rail Transit Tracking</p>
                         <hr id="heading-divider">
-                        <h2 class="page-heading">The Current Time In Your Area Is: <span id="current-time-container"></span></h2>
+                        <h2 class="page-heading">The Current Time In Your Area Is: <span
+                                id="current-time-container"></span></h2>
                     </div>
                 </div>
             </div>
@@ -85,7 +86,8 @@
                                             <div id="control-panel-container">
                                                 <h5 class="card-header">Options</h5>
                                                 <div class="card-body">
-                                                    <button type="button" id="add-entry-btn" class="btn btn-block btn-success">Add
+                                                    <button type="button" id="add-entry-btn"
+                                                        class="btn btn-block btn-success">Add
                                                         Entry</button>
                                                     <br>
                                                     <button type="button" id="update-entry-btn"
@@ -103,32 +105,41 @@
                                                     <label for="train-name">Train Name:</label>
                                                     <input type="text" class="form-control" id="train-name"
                                                         aria-describedby="name-help" required>
-                                                    <small id="name-help" class="form-text text-muted">Please enter a name
+                                                    <small id="name-help" class="form-text text-muted">Please enter a
+                                                        name
                                                         or other valid designation.</small>
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="train-name">Destination:</label>
                                                     <input type="text" class="form-control" id="train-destination"
-                                                        aria-describedby="destination-help" placeholder="San Francisco" required>
-                                                    <small id="destination-help" class="form-text text-muted">Please enter a valid destination.</small>
+                                                        aria-describedby="destination-help" placeholder="San Francisco"
+                                                        required>
+                                                    <small id="destination-help" class="form-text text-muted">Please
+                                                        enter a valid destination.</small>
                                                 </div>
                                                 <div class="form-group">
-                                                    <label for="train-time">First Train Time (HH:mm-Military Time):</label>
+                                                    <label for="train-time">First Train Time (HH:mm-Military
+                                                        Time):</label>
                                                     <input type="text" class="form-control" id="train-time"
                                                         aria-describedby="time-help" placeholder="18:00" required>
-                                                    <small id="time-help" class="form-text text-muted">Please enter a valid arrival time.</small>
+                                                    <small id="time-help" class="form-text text-muted">Please enter a
+                                                        valid arrival time.</small>
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="train-frequency">Train Frequency (min):</label>
                                                     <input type="text" class="form-control" id="train-frequency"
                                                         aria-describedby="frequency-help" required>
-                                                    <small id="frequency-help" class="form-text text-muted">Please enter a value in minutes.</small>
+                                                    <small id="frequency-help" class="form-text text-muted">Please enter
+                                                        a value in minutes.</small>
                                                 </div>
-                                                <button type="submit" class="btn btn-success" id="add-train-btn">Add Train</button>
-                                                <button type="reset" class="btn btn-danger reset-btn">Reset Form</button>
+                                                <button type="submit" class="btn btn-success" id="add-train-btn">Add
+                                                    Train</button>
+                                                <button type="reset" class="btn btn-danger reset-btn">Reset
+                                                    Form</button>
                                                 <br>
                                                 <br>
-                                                <button type="reset" class="btn btn-block btn-warning" id="adding-finished-btn">Finished</button>
+                                                <button type="reset" class="btn btn-block btn-warning"
+                                                    id="adding-finished-btn">Finished</button>
                                             </form>
                                         </div>
                                     </div>
@@ -143,6 +154,13 @@
 
         </footer>
     </div>
+    <!-- ===FIREBASE CONNECTING CODE=== -->
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
 </body>
 
 </html>

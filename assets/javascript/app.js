@@ -1,5 +1,20 @@
 // ===APP JS FILE===
 
+//firebase connecting code
+var firebaseConfig = {
+    apiKey: "AIzaSyBjpTyusyljyqkFl_BvuIXAVhhpEgbJ_x4",
+    authDomain: "bootcamp-train-scheduler.firebaseapp.com",
+    databaseURL: "https://bootcamp-train-scheduler.firebaseio.com",
+    projectId: "bootcamp-train-scheduler",
+    storageBucket: "bootcamp-train-scheduler.appspot.com",
+    messagingSenderId: "689625399475",
+    appId: "1:689625399475:web:73e77b640c081af719b0c6"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+
+  
+
 // code to display the current time
 // taken from: https://www.w3schools.com/js/tryit.asp?filename=tryjs_timing_clock
 function startTime() {
