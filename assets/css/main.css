@@ -1,3 +1,54 @@
 body{
-    
+    background-image: url(https://c4.wallpaperflare.com/wallpaper/227/256/2/blue-white-material-design-minimal-art-wallpaper-preview.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.card{
+    background-color: #2B2D42;
+    color: #DCEED1;
+}
+
+.card-img-top{
+    height: 450px;
+    width: auto;
+}
+
+.form-heading{
+    color: #DCEED1;
+    border: 10px double #40C9A2;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.reset-btn{
+    margin-left: 4px;
+}
+
+#add-entry-form{
+    border: 4px solid #28A745;
+    padding: 8px;
+}
+
+#control-panel-container{
+    background-image: url(https://ak5.picdn.net/shutterstock/videos/1008852965/thumb/1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#control-panel-container .card-header{
+    color: #2B2D42;
+}
+
+#heading-container{
+    background-color: #2B2D42;
+    text-align: center;
+    color: #DCEED1;
+    border: 10px double #40C9A2;
+    border-radius: 15px;
+    margin-top: 10px;
+}
+
+#heading-divider{
+    border: 2px solid #DCEED1;
 }
