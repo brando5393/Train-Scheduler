@@ -9,15 +9,12 @@ var firebaseConfig = {
     storageBucket: "bootcamp-train-scheduler.appspot.com",
     messagingSenderId: "689625399475",
     appId: "1:689625399475:web:73e77b640c081af719b0c6"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
+};
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
 
-  // global vars
-  var trainName = $("#train-name").trim().val();
-  var trainDestination = $("#train-destination").trim().val();
-  var firstTrainTime = $("#train-time").trim().val();
-  var trainFrequency = $("#train-frequency").trim().val();
+// global vars
+var database = firebase.database();
 
 
 // code to display the current time
@@ -36,23 +33,56 @@ function startTime() {
     // Line edited to use jquery
     $('#current-time-container').text(h + ":" + m + ":" + s);
     var t = setTimeout(startTime, 500);
-  }
-  function checkTime(i) {
-    if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
-    return i;
-  }
+}
 
-$(document).ready(function(){
+function checkTime(i) {
+    if (i < 10) {
+        i = "0" + i
+    }; // add zero in front of numbers < 10
+    return i;
+}
+
+$(document).ready(function () {
     startTime();
     // code to show forms on button clicks
-    $("#add-entry-btn").on("click", function(){
-        $("#add-entry-form").css({visibility: ""});
+    $("#add-entry-btn").on("click", function () {
+        $("#add-entry-form").css({
+            visibility: ""
+        });
         $("#control-panel-container").hide();
     })
 
     // code to hide forms on "finished" button clicks
-    $("#adding-finished-btn").on("click", function(){
-        $("#add-entry-form").css({visibility: "hidden"});
+    $("#adding-finished-btn").on("click", function () {
+        $("#add-entry-form").css({
+            visibility: "hidden"
+        });
         $("#control-panel-container").show();
+    })
+
+    // add train submit code
+    $("#add-train-btn").on("click", function (event) {
+        event.preventDefault();
+        // grab user input
+        var trainName = $("#train-name").trim().val();
+        var trainDestination = $("#train-destination").trim().val();
+        var firstTrainTime = $("#train-time").trim().val();
+        var trainFrequency = $("#train-frequency").trim().val();
+
+        // create temp obj for holding train data
+        var trainData = {
+            name: trainName,
+            destination: trainDestination,
+            time: firstTrainTime,
+            frequency: trainFrequency
+        }
+        // upload trainData to db
+        database.ref().push(trainData);
+        // trainData console logs
+        console.log(trainData.name);
+        console.log(trainData.destination);
+        console.log(trainData.time);
+        console.log(trainData.frequency);
+        console.log("train added");
     })
 })
