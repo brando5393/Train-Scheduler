@@ -1,6 +1,6 @@
 // ===APP JS FILE===
 
-//firebase connecting code
+// firebase connecting code
 var firebaseConfig = {
     apiKey: "AIzaSyBjpTyusyljyqkFl_BvuIXAVhhpEgbJ_x4",
     authDomain: "bootcamp-train-scheduler.firebaseapp.com",
@@ -13,7 +13,12 @@ var firebaseConfig = {
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
 
-  
+  // global vars
+  var trainName = $("#train-name").trim().val();
+  var trainDestination = $("#train-destination").trim().val();
+  var firstTrainTime = $("#train-time").trim().val();
+  var trainFrequency = $("#train-frequency").trim().val();
+
 
 // code to display the current time
 // taken from: https://www.w3schools.com/js/tryit.asp?filename=tryjs_timing_clock
