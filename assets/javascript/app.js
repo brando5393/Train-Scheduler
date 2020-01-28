@@ -86,8 +86,35 @@ $(document).ready(function () {
         console.log("train added");
         // Clears all of the text-boxes
         $("#train-name").val("");
-        $("##train-destination").val("");
+        $("#train-destination").val("");
         $("#train-time").val("");
         $("#train-frequency").val("");
+
     })
+})
+// add train data to db
+database.ref().on("child_added", function (childsnapshot) {
+    console.log(childsnapshot.val());
+    // store new db data in vars
+    var loggedTrainName = childsnapshot.val().name;
+    var loggedTrainDestination = childsnapshot.val().destination;
+    var loggedTrainTime = childsnapshot.val().time;
+    var loggedTrainFrequency = childsnapshot.val().frequency;
+    // console log above vars
+    console.log(loggedTrainName);
+    console.log(loggedTrainDestination);
+    console.log(loggedTrainTime);
+    console.log(loggedTrainFrequency);
+    // place moment js code below
+
+    // var for new table row
+    var newTrainTableRow = $("<tr>").append(
+        $("<td>").text("db key goes here"),
+        $("<td>").text(loggedTrainName),
+        $("<td>").text(loggedTrainDestination),
+        $("<td>").text(loggedTrainTime),
+        $("<td>").text(loggedTrainFrequency)
+    );
+    // append row to table
+    $("#train-schedule-table > #table-data").append(newTrainTableRow);
 })
