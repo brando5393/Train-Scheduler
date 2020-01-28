@@ -84,5 +84,10 @@ $(document).ready(function () {
         console.log(trainData.time);
         console.log(trainData.frequency);
         console.log("train added");
+        // Clears all of the text-boxes
+        $("#train-name").val("");
+        $("##train-destination").val("");
+        $("#train-time").val("");
+        $("#train-frequency").val("");
     })
 })
