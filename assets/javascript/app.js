@@ -64,10 +64,10 @@ $(document).ready(function () {
     $("#add-train-btn").on("click", function (event) {
         event.preventDefault();
         // grab user input
-        var trainName = $("#train-name").trim().val();
-        var trainDestination = $("#train-destination").trim().val();
-        var firstTrainTime = $("#train-time").trim().val();
-        var trainFrequency = $("#train-frequency").trim().val();
+        var trainName = $("#train-name").val().trim();
+        var trainDestination = $("#train-destination").val().trim();
+        var firstTrainTime = $("#train-time").val().trim();
+        var trainFrequency = $("#train-frequency").val().trim();
 
         // create temp obj for holding train data
         var trainData = {
