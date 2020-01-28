@@ -71,6 +71,7 @@ $(document).ready(function () {
 
         // create temp obj for holding train data
         var trainData = {
+            key: snapshotKey,
             name: trainName,
             destination: trainDestination,
             time: firstTrainTime,
