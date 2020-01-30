@@ -71,7 +71,6 @@ $(document).ready(function () {
 
         // create temp obj for holding train data
         var trainData = {
-            key: snapshotKey,
             name: trainName,
             destination: trainDestination,
             time: firstTrainTime,
@@ -97,6 +96,7 @@ $(document).ready(function () {
 database.ref().on("child_added", function (childsnapshot) {
     console.log(childsnapshot.val());
     // store new db data in vars
+    var entryKey = childsnapshot.key;
     var loggedTrainName = childsnapshot.val().name;
     var loggedTrainDestination = childsnapshot.val().destination;
     var loggedTrainTime = childsnapshot.val().time;
@@ -110,12 +110,13 @@ database.ref().on("child_added", function (childsnapshot) {
 
     // var for new table row
     var newTrainTableRow = $("<tr>").append(
-        $("<td>").text("db key goes here"),
+        $("<td>").text(entryKey),
         $("<td>").text(loggedTrainName),
         $("<td>").text(loggedTrainDestination),
-        $("<td>").text(loggedTrainTime),
         $("<td>").text(loggedTrainFrequency)
+        // next train time
+        // min away
     );
     // append row to table
-    $("#train-schedule-table > #table-data").append(newTrainTableRow);
+    $("#train-schedule-table").append(newTrainTableRow);
 })
